@@ -62,9 +62,9 @@ public class TerracottaJsonLayout extends JsonLayout {
 
   @Override
   protected void addCustomDataToJsonMap(Map<String, Object> map, ILoggingEvent logEvent) {
-    if (logEvent.getMarker() != null) {
+    if (!logEvent.getMarkerList().isEmpty()) {
       // only log top marker, no child
-      map.put(Key.MARKER, logEvent.getMarker().getName());
+      map.put(Key.MARKER, logEvent.getMarkerList().get(0).getName());
     }
 
     String accid = System.getProperty("terracotta.cloud.logging.accid");
