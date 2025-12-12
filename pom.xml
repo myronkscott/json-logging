@@ -40,7 +40,7 @@
         <slf4j.range.version>[${slf4j.base.version},3)</slf4j.range.version>
         <logback.base.version>1.5.22</logback.base.version>
         <logback.range.version>[${logback.base.version},1.5.9999)</logback.range.version>
-        <java.build.version>17</java.build.version>
+        <java.build.version>1.17</java.build.version>
         <spotbugs.skip>true</spotbugs.skip>
         <exclude-spotbugs-dependency>true</exclude-spotbugs-dependency>
     </properties>
