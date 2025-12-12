@@ -43,6 +43,14 @@ jobs:
   - template: build-templates/maven-common.yml@templates
     parameters:
       jdkVersion: '1.17'
+      jobName: Linux_Java_21
+      timeoutInMinutes: 180
+      options: -B -Djava.test.version=1.21
+      mavenGoals: 'clean verify'
+      fetchDepth: 0 # need unlimited for license plugin
+  - template: build-templates/maven-common.yml@templates
+    parameters:
+      jdkVersion: '1.17'
       jobName: Windows_Java_11
       timeoutInMinutes: 180
       vmImage: 'windows-latest'
@@ -56,5 +64,14 @@ jobs:
       timeoutInMinutes: 180
       vmImage: 'windows-latest'
       options: -B -Djava.test.version=1.17
+      mavenGoals: 'clean verify'
+      fetchDepth: 0 # need unlimited for license plugin
+  - template: build-templates/maven-common.yml@templates
+    parameters:
+      jdkVersion: '1.17'
+      jobName: Windows_Java_21
+      timeoutInMinutes: 180
+      vmImage: 'windows-latest'
+      options: -B -Djava.test.version=1.21
       mavenGoals: 'clean verify'
       fetchDepth: 0 # need unlimited for license plugin
